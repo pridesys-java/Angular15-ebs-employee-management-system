@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  error = '';
+
+  constructor(
+    private router: Router
+  ) { }
+
+  onLogin(param: any): void {
+
+  }
 }
