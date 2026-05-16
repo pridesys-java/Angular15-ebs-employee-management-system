@@ -1,0 +1,84 @@
+<!-- RIGHT SIDE (FORM) -->
+<div class="col-md-12 d-flex align-items-center justify-content-center">
+
+  <div class="w-200" style="max-width: 680px;">
+
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+
+        <h4 class="text-center mb-4 fw-bold">Signup</h4>
+
+        <form #emp="ngForm" (ngSubmit)="onSignup(emp)">
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">First Name <span class="text-danger">*</span></label>
+              <input type="text" name="firstName" ngModel required #firstName="ngModel" class="form-control"
+                placeholder="Enter first name">
+                <small class="text-danger" *ngIf="firstName.invalid && lastName.touched">
+                First name is required
+              </small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Last Name</label>
+              <input type="text" name="lastName" ngModel #lastName="ngModel" class="form-control"
+                placeholder="Enter last name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Email <span class="text-danger">*</span></label>
+              <input name="email" ngModel required #email="ngModel" class="form-control" placeholder="Enter Email">
+              <small class="text-success font-weight-bold">Enter email here as username</small>
+              <small class="text-danger" *ngIf="email.invalid && email.touched">
+                Please enter valid email!
+              </small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Mobile No.</label>
+              <input name="mobileNo" ngModel class="form-control" placeholder="Enter your mobile no.">
+            </div>
+          </div>
+          <!-- EMAIL -->
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label class="form-label">Address</label>
+              <textarea name="address" ngModel class="form-control" placeholder="Enter your full address">
+            </textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Password <span class="text-danger">*</span></label>
+              <input type="password" name="password" ngModel required class="form-control"
+                placeholder="Enter password">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Confirm Password <span class="text-danger">*</span></label>
+              <input type="password" name="confirmPassword" ngModel required class="form-control"
+                placeholder="Enter confirm password">
+            </div>
+          </div>
+          <!-- BUTTON -->
+          <button class="btn btn-primary w-100 mt-2">
+            Signup
+          </button>
+          <div class="text-center mt-3">
+            <span>Back to Login? </span>
+            <a routerLink="/" class="text-decoration-none fw-bold">
+              Click Here
+            </a>
+          </div>
+          <!-- ERROR -->
+          <div class="text-danger mt-3 text-center">
+            {{error}}
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
