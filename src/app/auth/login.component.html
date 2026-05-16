@@ -1,47 +1,69 @@
 <div class="container-fluid min-vh-100 d-flex">
 
+  <div class="row flex-fill w-100">
+
+    <!-- LEFT SIDE (IMAGE) -->
+    <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center bg-light">
+
+      <div class="text-center p-4">
+        <!-- <img 
+          src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
+          class="img-fluid rounded shadow"
+          style="max-height: 400px;"
+        > -->
+        <img src="assets/images/logo.png" class="img-fluid rounded shadow" style="max-height: 400px;">
+
+        <h4 class="mt-4 fw-bold">Welcome To Pridesys EBS</h4>
+        <p class="text-muted">
+          Manage your employees efficiently and securely
+        </p>
+      </div>
+
+    </div>
+
     <!-- RIGHT SIDE (FORM) -->
     <div class="col-md-6 d-flex align-items-center justify-content-center">
 
-        <div class="w-100" style="max-width: 380px;">
+      <div class="w-100" style="max-width: 380px;">
 
-            <div class="card shadow-sm border-0">
-                <div class="card-body p-4">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
 
-                    <h4 class="text-center mb-4 fw-bold">Login</h4>
+            <h4 class="text-center mb-4 fw-bold">Login</h4>
 
-                    <form #f="ngForm" (ngSubmit)="onLogin(f)">
+            <form #f="ngForm" (ngSubmit)="onLogin(f)">
 
-                        <!-- EMAIL -->
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input name="email" ngModel required class="form-control" placeholder="Enter your email">
-                        </div>
+              <!-- EMAIL -->
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input name="email" ngModel required class="form-control" placeholder="Enter your email">
+              </div>
 
-                        <!-- PASSWORD -->
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="password" name="password" ngModel required class="form-control"
-                                placeholder="Enter your password">
-                        </div>
+              <!-- PASSWORD -->
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" ngModel required class="form-control"
+                  placeholder="Enter your password">
+              </div>
 
-                        <!-- BUTTON -->
-                        <button class="btn btn-primary w-100 mt-2">
-                            Login
-                        </button>
+              <!-- BUTTON -->
+              <button class="btn btn-primary w-100 mt-2">
+                Login
+              </button>
+              <!-- ERROR -->
+              <div class="text-danger mt-3 text-center">
+                {{error}}
+              </div>
 
-                        <!-- ERROR -->
-                        <div class="text-danger mt-3 text-center">
-                            {{error}}
-                        </div>
+            </form>
 
-                    </form>
-
-                </div>
-            </div>
-
+          </div>
         </div>
 
+      </div>
+
     </div>
+
+  </div>
 
 </div>
