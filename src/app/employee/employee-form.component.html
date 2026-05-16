@@ -1,0 +1,45 @@
+<div>
+
+    <label class="form-label fw-bold text-success">Name</label>
+    <input class="form-control mb-2"
+           [(ngModel)]="employee.empName">
+
+    <label class="form-label fw-bold text-success">Email</label>
+    <input class="form-control mb-2"
+           [(ngModel)]="employee.email">
+
+    <label class="form-label fw-bold text-success">DOB</label>
+    <input type="date"
+           class="form-control mb-2"
+           [(ngModel)]="employee.dob">
+
+    <label class="form-label fw-bold text-success">Joining Date</label>
+    <input type="date"
+           class="form-control mb-2"
+           [(ngModel)]="employee.joiningDate">
+
+    <!-- Department -->
+    <label class="form-label fw-bold text-success">Department</label>
+    <select class="form-control mb-2"
+            [(ngModel)]="employee.departmentId">
+        <option [ngValue]="null">Select Department</option>
+        <option *ngFor="let d of departments" [ngValue]="d.id">
+            {{d.depName}}
+        </option>
+    </select>
+
+    <!-- Position -->
+    <label class="form-label fw-bold text-success">Position</label>
+    <select class="form-control mb-2"
+            [(ngModel)]="employee.positionId">
+        <option [ngValue]="null">Select Position</option>
+        <option *ngFor="let p of positions" [ngValue]="p.id">
+            {{p.positionName}}
+        </option>
+    </select>
+
+    <button class="btn btn-primary w-100 mt-2" (click)="save()">
+        Save
+    </button>
+
+</div>
